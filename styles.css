@@ -95,7 +95,7 @@ body {
   font-family: 'Dancing Script', cursive;
   font-size: 45px;
   text-align: left;
-  margin-top: 30px;
+  margin-top:10px;
   margin-left: -80px;
   line-height: 1.1;
   background: linear-gradient(90deg, #ff4ecb, #00eaff);
@@ -110,7 +110,7 @@ body {
 /* Botón */
 .boton-catalogo-wrapper {
   position: absolute;
-  bottom: 90px;
+  bottom: 120px;
   left: 40px;
   z-index: 2;
   animation: fadeScale 1.5s ease forwards;
