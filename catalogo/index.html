@@ -2,42 +2,140 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Luna Streaming</title>
-  <link rel="stylesheet" href="styles.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Rye&family=Dancing+Script:wght@600&display=swap" rel="stylesheet" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Catálogo</title>
+  <link rel="stylesheet" href="styles1.css" />
+  
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Rye&display=swap" rel="stylesheet" />
 </head>
 <body>
   <div class="overlay"></div>
 
-  <div class="contenido">
-    <div class="logo-circulo"></div>
-    <img src="logo.png" alt="Logo" class="logo-img" />
-
+  <!-- Logo y texto -->
+  <div class="logo-area">
+    <img src="img/logo.png" alt="Logo" />
     <div class="texto-logo">
       <div class="luna">Luna</div>
       <div class="streaming">Streaming</div>
     </div>
-
-    <div class="mensaje-promesa">
-      Tu<br />
-      Entretenimiento,<br />
-      Nuestro<br />
-      Compromiso
-    </div>
   </div>
 
-  <!-- Botón Ver Catálogo con redirección -->
-  <div class="boton-catalogo-wrapper">
-    <a href="catalogo/">
-      <button class="button">
-        <div class="display">
-          <div id="msg">Ver Catálogo</div>
+  <!-- Línea separadora -->
+  <div class="logo-separador"></div>
+
+  <!-- Título categoría -->
+  <div class="categoria-wrapper">
+    <div class="categoria-texto">Individuales 🎞️</div>
+    <img src="img/Oferta.png" alt="Oferta" class="categoria-img" />
+  </div>
+
+  <!-- Sección Netflix -->
+  <div class="netflix-wrapper">
+    <a href="netflix.html" class="netflix-link">
+      <img src="img/Netflix.png" alt="Netflix Logo" class="netflix-img" />
+      <div class="netflix-texto-wrapper">
+        <div class="netflix-texto">Netflix | 30 DIAS</div>
+        <div class="netflix-info">
+          <span>Click para ver info o comprar</span>
+          <img src="img/Notas.png" alt="Notas" class="notas-icono" />
         </div>
-        <span></span>
-        <span></span>
-      </button>
+        <div class="netflix-precio-precio-wrapper">
+          <div class="netflix-precio-banderita">7.00 €</div>
+          <div class="netflix-precio-tachado">9.77 €</div>
+        </div>
+      </div>
     </a>
   </div>
+
+  <!-- Sección Disney -->
+  <div class="disney-wrapper">
+    <a href="disney.html" class="disney-link">
+      <img src="img/Disney.png" alt="Disney Logo" class="disney-img" />
+      <div class="disney-texto-wrapper">
+        <div class="disney-texto">Disney | 30 DIAS</div>
+        <div class="disney-info">
+          <span>Click para ver info o comprar</span>
+          <img src="img/Notas.png" alt="Notas" class="notas-icono" />
+        </div>
+        <div class="disney-precio-precio-wrapper">
+          <div class="disney-precio-banderita">5.00 €</div>
+          <div class="disney-precio-tachado">6.50 €</div>
+        </div>
+      </div>
+    </a>
+  </div>
+  
+  <!-- Sección Max -->
+  <div class="hbo-wrapper">
+    <a href="max.html" class="hbo-link">
+      <img src="img/Max.png" alt="Max Logo" class="hbo-img" />
+      <div class="hbo-texto-wrapper">
+        <div class="hbo-texto">Max | 30 DIAS</div>
+        <div class="hbo-info">
+          <span>Click para ver info o comprar</span>
+          <img src="img/Notas.png" alt="Notas" class="notas-icono" />
+        </div>
+        <div class="hbo-precio-precio-wrapper">
+          <div class="hbo-precio-banderita">5.00 €</div>
+          <div class="hbo-precio-tachado">6.50 €</div>
+        </div>
+      </div>
+    </a>
+  </div>
+  
+  <!-- Sección Prime -->
+  <div class="prime-wrapper">
+    <a href="prime.html" class="prime-link">
+      <img src="img/Prime.png" alt="PrimeVideo Logo" class="prime-img" />
+      <div class="prime-texto-wrapper">
+        <div class="prime-texto">PrimeVideo | 30 DIAS</div>
+        <div class="prime-info">
+          <span>Click para ver info o comprar</span>
+          <img src="img/Notas.png" alt="Notas" class="notas-icono" />
+        </div>
+        <div class="prime-precio-precio-wrapper">
+          <div class="prime-precio-banderita">5.00 €</div>
+          <div class="prime-precio-tachado">6.50 €</div>
+        </div>
+      </div>
+    </a>
+  </div>
+  
+  <!-- Sección IPTV -->
+  <div class="tv-wrapper">
+    <a href="tv.html" class="tv-link">
+      <img src="img/Iptv.png" alt="IPTV Logo" class="tv-img" />
+      <div class="tv-texto-wrapper">
+        <div class="tv-texto">IPTV | 30 DIAS</div>
+        <div class="tv-info">
+          <span>Click para ver info o comprar</span>
+          <img src="img/Notas.png" alt="Notas" class="notas-icono" />
+        </div>
+        <div class="tv-precio-precio-wrapper">
+          <div class="tv-precio-banderita">7.00 €</div>
+          <div class="tv-precio-tachado">10.20 €</div>
+        </div>
+      </div>
+    </a>
+  </div>
+  
+  <!-- Sección GPT -->
+  <div class="gpt-wrapper">
+    <a href="gpt.html" class="gpt-link">
+      <img src="img/Gpt.png" alt="Chat GPT Logo" class="gpt-img" />
+      <div class="gpt-texto-wrapper">
+        <div class="gpt-texto">GPT | 30 DIAS</div>
+        <div class="gpt-info">
+          <span>Click para ver info o comprar</span>
+          <img src="img/Notas.png" alt="Notas" class="notas-icono" />
+        </div>
+        <div class="gpt-precio-precio-wrapper">
+          <div class="gpt-precio-banderita">10.99 €</div>
+          <div class="gpt-precio-tachado">13.49 €</div>
+        </div>
+      </div>
+    </a>
+  </div>
+  
 </body>
 </html>
