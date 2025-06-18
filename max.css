@@ -1,0 +1,117 @@
+.hbo-wrapper {
+  position: absolute;
+  top: 450px; /* Debajo de Netflix */
+  left: 5%;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  z-index: 2;
+  user-select: none;
+  opacity: 0;
+  animation: slideInLeft 1s ease forwards;
+  animation-delay: 2.1s;
+}
+
+.hbo-img {
+  height: 85px;
+  border-radius: 15px;
+}
+
+.hbo-texto-wrapper {
+  display: flex;
+  flex-direction: column;
+  margin-left: 10px;
+}
+
+.hbo-texto {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 18px;
+  color: #ff4ecb;
+  font-weight: bold;
+  padding-top: 2px;
+  margin-bottom: 4px;
+}
+
+.hbo-info {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: 'Segoe UI', sans-serif;
+  font-size: 15px;
+  color: #ffffff;
+  opacity: 0.8;
+  margin-bottom: 4px;
+}
+
+.notas-icono {
+  height: 20px;
+  width: auto;
+  vertical-align: middle;
+}
+
+.hbo-precio-precio-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin: 0;
+}
+
+.hbo-precio-banderita {
+  background-color: #e50914;
+  color: white;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 13px;
+  font-weight: bold;
+  padding: 4px 10px;
+  border-radius: 4px;
+  width: fit-content;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+  transform: rotate(-2deg);
+  animation: fadeInUp 0.8s ease forwards;
+  opacity: 0;
+  animation-delay: 3.2s;
+  animation-fill-mode: forwards;
+  letter-spacing: 0.5px;
+}
+
+.hbo-precio-tachado {
+  color: orange;
+  font-size: 13px;
+  text-decoration: line-through;
+  font-family: 'Segoe UI', sans-serif;
+  opacity: 0;
+  animation: fadeInUp 0.8s ease forwards;
+  animation-delay: 3.4s;
+  animation-fill-mode: forwards;
+  padding: 2px 0;
+}
+
+.hbo-link {
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
