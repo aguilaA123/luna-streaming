@@ -2,52 +2,320 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Luna Streaming</title>
-
-  <!-- Estilos y fuentes -->
-  <link rel="stylesheet" href="styles.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Rye&family=Dancing+Script:wght@600&display=swap" rel="stylesheet" />
-
-  <!-- META para WhatsApp, Facebook, etc. -->
-  <meta property="og:title" content="Luna Streaming" />
-  <meta property="og:description" content="Tu entretenimiento, nuestro compromiso. Explora nuestro catálogo de streaming a un buen precio." />
-  <meta property="og:image" content="https://luna-streaming.vercel.app/og-logo.jpg" />
-  <meta property="og:url" content="https://luna-streaming.vercel.app/" />
-  <meta property="og:type" content="website" />
-  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Catálogo</title>
+  <link rel="stylesheet" href="styles1.css" />
+  
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Rye&display=swap" rel="stylesheet" />
 </head>
 <body>
   <div class="overlay"></div>
 
-  <div class="contenido">
-    <div class="logo-circulo"></div>
-    <img src="img/logo.png" alt="Logo" class="logo-img" />
-
+  <!-- Logo y texto -->
+  <div class="logo-area">
+    <img src="../../img/logo.png" alt="Logo" />
     <div class="texto-logo">
       <div class="luna">Luna</div>
       <div class="streaming">Streaming</div>
     </div>
-
-    <div class="mensaje-promesa">
-      Tu<br />
-      Entretenimiento,<br />
-      Nuestro<br />
-      Compromiso
-    </div>
   </div>
 
-  <!-- Botón Ver Catálogo con redirección -->
-  <div class="boton-catalogo-wrapper">
-    <a href="catalogo/">
-      <button class="button">
-        <div class="display">
-          <div id="msg">Ver Catálogo</div>
+  <!-- Línea separadora -->
+  <div class="logo-separador"></div>
+
+  <!-- Título categoría -->
+  <div class="categoria-wrapper">
+    <div class="categoria-texto">Individuales 🎞️</div>
+    <img src="../../img/Oferta.png" alt="Oferta" class="categoria-img" />
+  </div>
+
+  <!-- Sección Netflix -->
+  <div class="netflix-wrapper">
+    <a href="netflix/" class="netflix-link">
+      <img src="../../img/Netflix.png" alt="Netflix Logo" class="netflix-img" />
+      <div class="netflix-texto-wrapper">
+        <div class="netflix-texto">Netflix | 30 DIAS</div>
+        <div class="netflix-info">
+          <span>Click para ver info o comprar</span>
+          <img src="../../img/Notas.png" alt="Notas" class="notas-icono" />
         </div>
-        <span></span>
-        <span></span>
-      </button>
+        <div class="netflix-precio-precio-wrapper">
+          <div class="netflix-precio-banderita">7.00 €</div>
+          <div class="netflix-precio-tachado">9.77 €</div>
+        </div>
+      </div>
     </a>
   </div>
+
+  <!-- Sección Disney -->
+  <div class="disney-wrapper">
+    <a href="disney/" class="disney-link">
+      <img src="../../img/Disney.png" alt="Disney Logo" class="disney-img" />
+      <div class="disney-texto-wrapper">
+        <div class="disney-texto">Disney | 30 DIAS</div>
+        <div class="disney-info">
+          <span>Click para ver info o comprar</span>
+          <img src="../../img/Notas.png" alt="Notas" class="notas-icono" />
+        </div>
+        <div class="disney-precio-precio-wrapper">
+          <div class="disney-precio-banderita">5.00 €</div>
+          <div class="disney-precio-tachado">6.50 €</div>
+        </div>
+      </div>
+    </a>
+  </div>
+  
+  <!-- Sección Max -->
+  <div class="hbo-wrapper">
+    <a href="max/" class="hbo-link">
+      <img src="../../img/Max.png" alt="Max Logo" class="hbo-img" />
+      <div class="hbo-texto-wrapper">
+        <div class="hbo-texto">Max | 30 DIAS</div>
+        <div class="hbo-info">
+          <span>Click para ver info o comprar</span>
+          <img src="../../img/Notas.png" alt="Notas" class="notas-icono" />
+        </div>
+        <div class="hbo-precio-precio-wrapper">
+          <div class="hbo-precio-banderita">5.00 €</div>
+          <div class="hbo-precio-tachado">6.50 €</div>
+        </div>
+      </div>
+    </a>
+  </div>
+  
+  <!-- Sección Prime -->
+  <div class="prime-wrapper">
+    <a href="primevideo/" class="prime-link">
+      <img src="../../img/Prime.png" alt="PrimeVideo Logo" class="prime-img" />
+      <div class="prime-texto-wrapper">
+        <div class="prime-texto">PrimeVideo | 30 DIAS</div>
+        <div class="prime-info">
+          <span>Click para ver info o comprar</span>
+          <img src="../../img/Notas.png" alt="Notas" class="notas-icono" />
+        </div>
+        <div class="prime-precio-precio-wrapper">
+          <div class="prime-precio-banderita">5.00 €</div>
+          <div class="prime-precio-tachado">6.50 €</div>
+        </div>
+      </div>
+    </a>
+  </div>
+  
+  <!-- Sección IPTV -->
+  <div class="tv-wrapper">
+    <a href="iptv/" class="tv-link">
+      <img src="../../img/Iptv.png" alt="IPTV Logo" class="tv-img" />
+      <div class="tv-texto-wrapper">
+        <div class="tv-texto">IPTV | 30 DIAS</div>
+        <div class="tv-info">
+          <span>Click para ver info o comprar</span>
+          <img src="../../img/Notas.png" alt="Notas" class="notas-icono" />
+        </div>
+        <div class="tv-precio-precio-wrapper">
+          <div class="tv-precio-banderita">7.00 €</div>
+          <div class="tv-precio-tachado">10.20 €</div>
+        </div>
+      </div>
+    </a>
+  </div>
+  
+  <!-- Sección GPT -->
+  <div class="gpt-wrapper">
+    <a href="chatgpt/" class="gpt-link">
+      <img src="../../img/Gpt.png" alt="Chat GPT Logo" class="gpt-img" />
+      <div class="gpt-texto-wrapper">
+        <div class="gpt-texto">GPT | 30 DIAS</div>
+        <div class="gpt-info">
+          <span>Click para ver info o comprar</span>
+          <img src="../../img/Notas.png" alt="Notas" class="notas-icono" />
+        </div>
+        <div class="gpt-precio-precio-wrapper">
+          <div class="gpt-precio-banderita">10.00 €</div>
+          <div class="gpt-precio-tachado">13.49 €</div>
+        </div>
+      </div>
+    </a>
+  </div>
+  
+  <!-- Sección YT -->
+  <div class="yt-wrapper">
+    <a href="youtub/e" class="yt-link">
+      <img src="../../img/YouTube.png" alt="YouTube Premium Logo" class="yt-img" />
+      <div class="yt-texto-wrapper">
+        <div class="yt-texto">YouTube | 30 DIAS</div>
+        <div class="yt-info">
+          <span>Click para ver info o comprar</span>
+          <img src="../../img/Notas.png" alt="Notas" class="notas-icono" />
+        </div>
+        <div class="yt-precio-precio-wrapper">
+          <div class="yt-precio-banderita">5.00 €</div>
+          <div class="yt-precio-tachado">6.50 €</div>
+        </div>
+      </div>
+    </a>
+  </div>
+  
+   <!-- Sección Spotify -->
+  <div class="sp-wrapper">
+    <a href="spotify/" class="sp-link">
+      <img src="../../img/Spotify.png" alt="Spotify Premium Logo" class="sp-img" />
+      <div class="sp-texto-wrapper">
+        <div class="sp-texto">Spotify | 30 DIAS</div>
+        <div class="sp-info">
+          <span>Click para ver info o comprar</span>
+          <img src="../../img/Notas.png" alt="Notas" class="notas-icono" />
+        </div>
+        <div class="sp-precio-precio-wrapper">
+          <div class="sp-precio-banderita">6.00 €</div>
+          <div class="sp-precio-tachado">7.50 €</div>
+        </div>
+      </div>
+    </a>
+  </div>
+  
+  <!-- Sección CrunchyRoll -->
+  <div class="cr-wrapper">
+    <a href="crunchyroll/" class="cr-link">
+      <img src="../../img/Crunchyroll.png" alt="Crunchyroll Logo" class="cr-img" />
+      <div class="cr-texto-wrapper">
+        <div class="cr-texto">Crunchyroll | 30 DIAS</div>
+        <div class="cr-info">
+          <span>Click para ver info o comprar</span>
+          <img src="../../img/Notas.png" alt="Notas" class="notas-icono" />
+        </div>
+        <div class="cr-precio-precio-wrapper">
+          <div class="cr-precio-banderita">4.00 €</div>
+          <div class="cr-precio-tachado">5.70 €</div>
+        </div>
+      </div>
+    </a>
+  </div>
+  
+  <!-- Sección VIX -->
+  <div class="vix-wrapper">
+    <a href="vix/" class="vix-link">
+      <img src="../../img/Vix.png" alt="Vix Logo" class="vix-img" />
+      <div class="vix-texto-wrapper">
+        <div class="vix-texto">Vix | 30 DIAS</div>
+        <div class="vix-info">
+          <span>Click para ver info o comprar</span>
+          <img src="../../img/Notas.png" alt="Notas" class="notas-icono" />
+        </div>
+        <div class="vix-precio-precio-wrapper">
+          <div class="vix-precio-banderita">5.00 €</div>
+          <div class="vix-precio-tachado">6.00 €</div>
+        </div>
+      </div>
+    </a>
+  </div>
+  
+  <!-- Sección Canva -->
+  <div class="canva-wrapper">
+    <a href="canva/" class="canva-link">
+      <img src="../../img/Canva.png" alt="Canva Logo" class="canva-img" />
+      <div class="canva-texto-wrapper">
+        <div class="canva-texto">Canva | 30 DIAS</div>
+        <div class="canva-info">
+          <span>Click para ver info o comprar</span>
+          <img src="../../img/Notas.png" alt="Notas" class="notas-icono" />
+        </div>
+        <div class="canva-precio-precio-wrapper">
+          <div class="canva-precio-banderita">4.00 €</div>
+          <div class="canva-precio-tachado">5.70 €</div>
+        </div>
+      </div>
+    </a>
+  </div>
+  
+  <!-- Sección Windows 11 Pro -->
+  <div class="wi11p-wrapper">
+    <a href="windows11pro/" class="wi11p-link">
+      <img src="../../img/Wi11P.png" alt="Windows 11 Pro Logo" class="wi11p-img" />
+      <div class="wi11p-texto-wrapper">
+        <div class="wi11p-texto">Windows 11 PRO</div>
+        <div class="wi11p-info">
+          <span>Click para ver info o comprar</span>
+          <img src="../../img/Notas.png" alt="Notas" class="notas-icono" />
+        </div>
+        <div class="wi11p-precio-precio-wrapper">
+          <div class="wi11p-precio-banderita">10.00 €</div>
+          <div class="wi11p-precio-tachado">14.40 €</div>
+        </div>
+      </div>
+    </a>
+  </div>
+  
+  <!-- Sección Windows 11 Home -->
+  <div class="wi11h-wrapper">
+    <a href="windows11Home/" class="wi11h-link">
+      <img src="../../img/Wi11H.png" alt="Windows 11 Home Logo" class="wi11h-img" />
+      <div class="wi11h-texto-wrapper">
+        <div class="wi11h-texto">Windows 11 Home</div>
+        <div class="wi11h-info">
+          <span>Click para ver info o comprar</span>
+          <img src="../../img/Notas.png" alt="Notas" class="notas-icono" />
+        </div>
+        <div class="wi11h-precio-precio-wrapper">
+          <div class="wi11h-precio-banderita">10.00 €</div>
+          <div class="wi11h-precio-tachado">14.40 €</div>
+        </div>
+      </div>
+    </a>
+  </div>
+  
+  <!-- Sección Windows 10 Pro -->
+  <div class="wi10p-wrapper">
+    <a href="windows10pro/" class="wi10p-link">
+      <img src="../../img/Wi10P.png" alt="Windows 10 Pro Logo" class="wi10p-img" />
+      <div class="wi10p-texto-wrapper">
+        <div class="wi10p-texto">Windows 10 PRO</div>
+        <div class="wi10p-info">
+          <span>Click para ver info o comprar</span>
+          <img src="../../img/Notas.png" alt="Notas" class="notas-icono" />
+        </div>
+        <div class="wi10p-precio-precio-wrapper">
+          <div class="wi10p-precio-banderita">10.00 €</div>
+          <div class="wi10p-precio-tachado">14.40 €</div>
+        </div>
+      </div>
+    </a>
+  </div>
+  
+  <!-- Sección Windows 10 Home -->
+  <div class="wi10h-wrapper">
+    <a href="windows10home/" class="wi10h-link">
+      <img src="../../img/Wi10H.png" alt="Windows 10 Home Logo" class="wi10h-img" />
+      <div class="wi10h-texto-wrapper">
+        <div class="wi10h-texto">Windows 10 Home</div>
+        <div class="wi10h-info">
+          <span>Click para ver info o comprar</span>
+          <img src="../../img/Notas.png" alt="Notas" class="notas-icono" />
+        </div>
+        <div class="wi10h-precio-precio-wrapper">
+          <div class="wi10h-precio-banderita">10.00 €</div>
+          <div class="wi10h-precio-tachado">14.40 €</div>
+        </div>
+      </div>
+    </a>
+  </div>
+  
+  <!-- Sección Office -->
+  <div class="of-wrapper">
+    <a href="office365/" class="of-link">
+      <img src="../../img/Office.png" alt="Licencia Office 364 Logo" class="of-img" />
+      <div class="of-texto-wrapper">
+        <div class="of-texto">Office 365</div>
+        <div class="of-info">
+          <span>Click para ver info o comprar</span>
+          <img src="../../img/Notas.png" alt="Notas" class="notas-icono" />
+        </div>
+        <div class="of-precio-precio-wrapper">
+          <div class="of-precio-banderita">14.00 €</div>
+          <div class="of-precio-tachado">15.00 €</div>
+        </div>
+      </div>
+    </a>
+  </div>
+  
 </body>
 </html>
