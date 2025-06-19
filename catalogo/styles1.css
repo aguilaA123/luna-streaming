@@ -1,0 +1,2068 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-image: url('../../img/fondo.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  font-family: 'Segoe UI', sans-serif;
+  position: relative;
+  height: 100vh;
+  overflow-x: hidden;
+}
+
+.overlay {
+  position: fixed; /* Mejor para cubrir fondo */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh; /* Solo cubre el alto de la pantalla visible */
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 0;
+  pointer-events: none; /* Evita que bloquee scroll o clics */
+}
+
+.logo-area {
+  position: absolute;
+  top: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  z-index: 1;
+}
+
+.logo-area img {
+  height: 100px;
+  margin-right: 15px;
+  animation: fadeIn 1.5s ease forwards;
+}
+
+.texto-logo {
+  display: flex;
+  flex-direction: column;
+  line-height: 1;
+  text-align: left;
+  animation: slideInLeft 1.5s ease forwards;
+  animation-delay: 0.5s;
+  opacity: 0;
+}
+
+.luna {
+  font-family: 'Rye', cursive;
+  font-size: 50px;
+  color: #00eaff;
+}
+
+.streaming {
+  font-family: 'Rye', cursive;
+  font-size: 40px;
+  color: #ff4ecb;
+}
+
+.logo-separador {
+  position: absolute;
+  top: 140px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 1.2px;
+  background: linear-gradient(to right, transparent 0%, #d3d3d3 15%, #d3d3d3 85%, transparent 100%);
+  opacity: 0;
+  z-index: 1;
+  border-radius: 10px;
+  animation: growLine 1s ease forwards;
+  animation-delay: 1s;
+}
+
+.categoria-wrapper {
+  position: absolute;
+  top: 155px;
+  left: 5%;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  z-index: 2;
+  user-select: none;
+  opacity: 0;
+  animation: slideInLeft 1s ease forwards;
+  animation-delay: 1.2s;
+}
+
+.categoria-texto {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 24px;
+  color: #00eaff;
+  text-shadow: 1px 1px 4px rgba(0,0,0,0.7);
+  font-weight: 700;
+}
+
+.categoria-img {
+  height: 40px;
+  animation: pulseScale 1s ease-in-out infinite;
+  transform-origin: center;
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes growLine {
+  from {
+    width: 0;
+    opacity: 0;
+  }
+  to {
+    width: 90%;
+    opacity: 0.7;
+  }
+}
+
+@keyframes pulseScale {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+}
+
+
+/* NETFLIX */
+
+.netflix-wrapper {
+  position: absolute;
+  top: 230px; /* Ajusta según lo que veas en pantalla */
+  left: 5%;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  z-index: 2;
+  user-select: none;
+  opacity: 0;
+  animation: slideInLeft 1s ease forwards;
+  animation-delay: 1.5s;
+}
+
+.netflix-img {
+  height: 85px;
+  border-radius: 15px;
+}
+
+.netflix-texto-wrapper {
+  display: flex;
+  flex-direction: column;
+  margin-left: 10px;
+}
+
+.netflix-texto {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 18px;
+  color: #ff4ecb;
+  font-weight: bold;
+  padding-top: 2px;
+  margin-bottom: 4px;
+}
+
+.netflix-info {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: 'Segoe UI', sans-serif;
+  font-size: 15px;
+  color: #ffffff;
+  opacity: 0.8;
+  margin-bottom: 4px;
+}
+
+.notas-icono {
+  height: 20px;
+  width: auto;
+  vertical-align: middle;
+}
+
+.netflix-precio-precio-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin: 0;
+}
+
+.netflix-precio-banderita {
+  background-color: #e50914;
+  color: white;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 13px;
+  font-weight: bold;
+  padding: 4px 10px;
+  border-radius: 4px;
+  width: fit-content;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+  transform: rotate(-2deg);
+  animation: fadeInUp 0.8s ease forwards;
+  opacity: 0;
+  animation-delay: 2.6s;
+  animation-fill-mode: forwards;
+  letter-spacing: 0.5px;
+}
+
+.netflix-precio-tachado {
+  color: orange;
+  font-size: 13px;
+  text-decoration: line-through;
+  font-family: 'Segoe UI', sans-serif;
+  opacity: 0;
+  animation: fadeInUp 0.8s ease forwards;
+  animation-delay: 2.8s;
+  animation-fill-mode: forwards;
+  padding: 2px 0;
+}
+
+.netflix-link {
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* DISNEY */
+
+.disney-wrapper {
+  position: absolute;
+  top: 340px; /* Debajo de Netflix */
+  left: 5%;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  z-index: 2;
+  user-select: none;
+  opacity: 0;
+  animation: slideInLeft 1s ease forwards;
+  animation-delay: 1.8s;
+}
+
+.disney-img {
+  height: 85px;
+  border-radius: 15px;
+}
+
+.disney-texto-wrapper {
+  display: flex;
+  flex-direction: column;
+  margin-left: 10px;
+}
+
+.disney-texto {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 18px;
+  color: #ff4ecb;
+  font-weight: bold;
+  padding-top: 2px;
+  margin-bottom: 4px;
+}
+
+.disney-info {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: 'Segoe UI', sans-serif;
+  font-size: 15px;
+  color: #ffffff;
+  opacity: 0.8;
+  margin-bottom: 4px;
+}
+
+.notas-icono {
+  height: 20px;
+  width: auto;
+  vertical-align: middle;
+}
+
+.disney-precio-precio-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin: 0;
+}
+
+.disney-precio-banderita {
+  background-color: #e50914;
+  color: white;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 13px;
+  font-weight: bold;
+  padding: 4px 10px;
+  border-radius: 4px;
+  width: fit-content;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+  transform: rotate(-2deg);
+  animation: fadeInUp 0.8s ease forwards;
+  opacity: 0;
+  animation-delay: 2.9s;
+  animation-fill-mode: forwards;
+  letter-spacing: 0.5px;
+}
+
+.disney-precio-tachado {
+  color: orange;
+  font-size: 13px;
+  text-decoration: line-through;
+  font-family: 'Segoe UI', sans-serif;
+  opacity: 0;
+  animation: fadeInUp 0.8s ease forwards;
+  animation-delay: 3.1s;
+  animation-fill-mode: forwards;
+  padding: 2px 0;
+}
+
+.disney-link {
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* MAX */
+
+.hbo-wrapper {
+  position: absolute;
+  top: 450px; /* Debajo de Netflix */
+  left: 5%;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  z-index: 2;
+  user-select: none;
+  opacity: 0;
+  animation: slideInLeft 1s ease forwards;
+  animation-delay: 2.1s;
+}
+
+.hbo-img {
+  height: 85px;
+  border-radius: 15px;
+}
+
+.hbo-texto-wrapper {
+  display: flex;
+  flex-direction: column;
+  margin-left: 10px;
+}
+
+.hbo-texto {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 18px;
+  color: #ff4ecb;
+  font-weight: bold;
+  padding-top: 2px;
+  margin-bottom: 4px;
+}
+
+.hbo-info {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: 'Segoe UI', sans-serif;
+  font-size: 15px;
+  color: #ffffff;
+  opacity: 0.8;
+  margin-bottom: 4px;
+}
+
+.notas-icono {
+  height: 20px;
+  width: auto;
+  vertical-align: middle;
+}
+
+.hbo-precio-precio-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin: 0;
+}
+
+.hbo-precio-banderita {
+  background-color: #e50914;
+  color: white;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 13px;
+  font-weight: bold;
+  padding: 4px 10px;
+  border-radius: 4px;
+  width: fit-content;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+  transform: rotate(-2deg);
+  animation: fadeInUp 0.8s ease forwards;
+  opacity: 0;
+  animation-delay: 3.2s;
+  animation-fill-mode: forwards;
+  letter-spacing: 0.5px;
+}
+
+.hbo-precio-tachado {
+  color: orange;
+  font-size: 13px;
+  text-decoration: line-through;
+  font-family: 'Segoe UI', sans-serif;
+  opacity: 0;
+  animation: fadeInUp 0.8s ease forwards;
+  animation-delay: 3.4s;
+  animation-fill-mode: forwards;
+  padding: 2px 0;
+}
+
+.hbo-link {
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* IPTV */
+
+.tv-wrapper {
+  position: absolute;
+  top: 670px; /* Debajo de Netflix */
+  left: 5%;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  z-index: 2;
+  user-select: none;
+  opacity: 0;
+  animation: slideInLeft 1s ease forwards;
+  animation-delay: 2.7s;
+}
+
+.tv-img {
+  height: 85px;
+  border-radius: 15px;
+}
+
+.tv-texto-wrapper {
+  display: flex;
+  flex-direction: column;
+  margin-left: 10px;
+}
+
+.tv-texto {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 18px;
+  color: #ff4ecb;
+  font-weight: bold;
+  padding-top: 2px;
+  margin-bottom: 4px;
+}
+
+.tv-info {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: 'Segoe UI', sans-serif;
+  font-size: 15px;
+  color: #ffffff;
+  opacity: 0.8;
+  margin-bottom: 4px;
+}
+
+.notas-icono {
+  height: 20px;
+  width: auto;
+  vertical-align: middle;
+}
+
+.tv-precio-precio-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin: 0;
+}
+
+.tv-precio-banderita {
+  background-color: #e50914;
+  color: white;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 13px;
+  font-weight: bold;
+  padding: 4px 10px;
+  border-radius: 4px;
+  width: fit-content;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+  transform: rotate(-2deg);
+  animation: fadeInUp 0.8s ease forwards;
+  opacity: 0;
+  animation-delay: 3.8s;
+  animation-fill-mode: forwards;
+  letter-spacing: 0.5px;
+}
+
+.tv-precio-tachado {
+  color: orange;
+  font-size: 13px;
+  text-decoration: line-through;
+  font-family: 'Segoe UI', sans-serif;
+  opacity: 0;
+  animation: fadeInUp 0.8s ease forwards;
+  animation-delay: 4.0s;
+  animation-fill-mode: forwards;
+  padding: 2px 0;
+}
+
+.tv-link {
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* PRIME */
+
+.prime-wrapper {
+  position: absolute;
+  top: 560px; /* Debajo de Netflix */
+  left: 5%;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  z-index: 2;
+  user-select: none;
+  opacity: 0;
+  animation: slideInLeft 1s ease forwards;
+  animation-delay: 2.4s;
+}
+
+.prime-img {
+  height: 85px;
+  border-radius: 15px;
+}
+
+.prime-texto-wrapper {
+  display: flex;
+  flex-direction: column;
+  margin-left: 10px;
+}
+
+.prime-texto {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 18px;
+  color: #ff4ecb;
+  font-weight: bold;
+  padding-top: 2px;
+  margin-bottom: 4px;
+}
+
+.prime-info {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: 'Segoe UI', sans-serif;
+  font-size: 15px;
+  color: #ffffff;
+  opacity: 0.8;
+  margin-bottom: 4px;
+}
+
+.notas-icono {
+  height: 20px;
+  width: auto;
+  vertical-align: middle;
+}
+
+.prime-precio-precio-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin: 0;
+}
+
+.prime-precio-banderita {
+  background-color: #e50914;
+  color: white;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 13px;
+  font-weight: bold;
+  padding: 4px 10px;
+  border-radius: 4px;
+  width: fit-content;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+  transform: rotate(-2deg);
+  animation: fadeInUp 0.8s ease forwards;
+  opacity: 0;
+  animation-delay: 3.5s;
+  animation-fill-mode: forwards;
+  letter-spacing: 0.5px;
+}
+
+.prime-precio-tachado {
+  color: orange;
+  font-size: 13px;
+  text-decoration: line-through;
+  font-family: 'Segoe UI', sans-serif;
+  opacity: 0;
+  animation: fadeInUp 0.8s ease forwards;
+  animation-delay: 3.7s;
+  animation-fill-mode: forwards;
+  padding: 2px 0;
+}
+
+.prime-link {
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* GPT */
+
+.gpt-wrapper {
+  position: absolute;
+  top: 780px; /* Debajo de Netflix */
+  left: 5%;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  z-index: 2;
+  user-select: none;
+  opacity: 0;
+  animation: slideInLeft 1s ease forwards;
+  animation-delay: 3.0s;
+}
+
+.gpt-img {
+  height: 85px;
+  border-radius: 15px;
+}
+
+.gpt-texto-wrapper {
+  display: flex;
+  flex-direction: column;
+  margin-left: 10px;
+}
+
+.gpt-texto {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 18px;
+  color: #ff4ecb;
+  font-weight: bold;
+  padding-top: 2px;
+  margin-bottom: 4px;
+}
+
+.gpt-info {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: 'Segoe UI', sans-serif;
+  font-size: 15px;
+  color: #ffffff;
+  opacity: 0.8;
+  margin-bottom: 4px;
+}
+
+.gpt-icono {
+  height: 20px;
+  width: auto;
+  vertical-align: middle;
+}
+
+.gpt-precio-precio-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin: 0;
+}
+
+.gpt-precio-banderita {
+  background-color: #e50914;
+  color: white;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 13px;
+  font-weight: bold;
+  padding: 4px 10px;
+  border-radius: 4px;
+  width: fit-content;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+  transform: rotate(-2deg);
+  animation: fadeInUp 0.8s ease forwards;
+  opacity: 0;
+  animation-delay: 4.1s;
+  animation-fill-mode: forwards;
+  letter-spacing: 0.5px;
+}
+
+.gpt-precio-tachado {
+  color: orange;
+  font-size: 13px;
+  text-decoration: line-through;
+  font-family: 'Segoe UI', sans-serif;
+  opacity: 0;
+  animation: fadeInUp 0.8s ease forwards;
+  animation-delay: 4.3s;
+  animation-fill-mode: forwards;
+  padding: 2px 0;
+}
+
+.gpt-link {
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* YOUTUBE */
+
+.yt-wrapper {
+  position: absolute;
+  top: 890px; /* Debajo de Netflix */
+  left: 5%;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  z-index: 2;
+  user-select: none;
+  opacity: 0;
+  animation: slideInLeft 1s ease forwards;
+  animation-delay: 3.3s;
+}
+
+.yt-img {
+  height: 85px;
+  border-radius: 15px;
+}
+
+.yt-texto-wrapper {
+  display: flex;
+  flex-direction: column;
+  margin-left: 10px;
+}
+
+.yt-texto {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 18px;
+  color: #ff4ecb;
+  font-weight: bold;
+  padding-top: 2px;
+  margin-bottom: 4px;
+}
+
+.yt-info {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: 'Segoe UI', sans-serif;
+  font-size: 15px;
+  color: #ffffff;
+  opacity: 0.8;
+  margin-bottom: 4px;
+}
+
+.yt-icono {
+  height: 20px;
+  width: auto;
+  vertical-align: middle;
+}
+
+.yt-precio-precio-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin: 0;
+}
+
+.yt-precio-banderita {
+  background-color: #e50914;
+  color: white;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 13px;
+  font-weight: bold;
+  padding: 4px 10px;
+  border-radius: 4px;
+  width: fit-content;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+  transform: rotate(-2deg);
+  animation: fadeInUp 0.8s ease forwards;
+  opacity: 0;
+  animation-delay: 4.4s;
+  animation-fill-mode: forwards;
+  letter-spacing: 0.5px;
+}
+
+.yt-precio-tachado {
+  color: orange;
+  font-size: 13px;
+  text-decoration: line-through;
+  font-family: 'Segoe UI', sans-serif;
+  opacity: 0;
+  animation: fadeInUp 0.8s ease forwards;
+  animation-delay: 4.6s;
+  animation-fill-mode: forwards;
+  padding: 2px 0;
+}
+
+.yt-link {
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* SPOTIFY */
+
+.sp-wrapper {
+  position: absolute;
+  top: 1000px; /* Debajo de Netflix */
+  left: 5%;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  z-index: 2;
+  user-select: none;
+  opacity: 0;
+  animation: slideInLeft 1s ease forwards;
+  animation-delay: 3.6s;
+}
+
+.sp-img {
+  height: 85px;
+  border-radius: 15px;
+}
+
+.sp-texto-wrapper {
+  display: flex;
+  flex-direction: column;
+  margin-left: 10px;
+}
+
+.sp-texto {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 18px;
+  color: #ff4ecb;
+  font-weight: bold;
+  padding-top: 2px;
+  margin-bottom: 4px;
+}
+
+.sp-info {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: 'Segoe UI', sans-serif;
+  font-size: 15px;
+  color: #ffffff;
+  opacity: 0.8;
+  margin-bottom: 4px;
+}
+
+.sp-icono {
+  height: 20px;
+  width: auto;
+  vertical-align: middle;
+}
+
+.sp-precio-precio-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin: 0;
+}
+
+.sp-precio-banderita {
+  background-color: #e50914;
+  color: white;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 13px;
+  font-weight: bold;
+  padding: 4px 10px;
+  border-radius: 4px;
+  width: fit-content;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+  transform: rotate(-2deg);
+  animation: fadeInUp 0.8s ease forwards;
+  opacity: 0;
+  animation-delay: 4.7s;
+  animation-fill-mode: forwards;
+  letter-spacing: 0.5px;
+}
+
+.sp-precio-tachado {
+  color: orange;
+  font-size: 13px;
+  text-decoration: line-through;
+  font-family: 'Segoe UI', sans-serif;
+  opacity: 0;
+  animation: fadeInUp 0.8s ease forwards;
+  animation-delay: 4.9s;
+  animation-fill-mode: forwards;
+  padding: 2px 0;
+}
+
+.sp-link {
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* CrunchyRoll */
+
+.cr-wrapper {
+  position: absolute;
+  top: 1120px; /* Debajo de Netflix */
+  left: 5%;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  z-index: 2;
+  user-select: none;
+  opacity: 0;
+  animation: slideInLeft 1s ease forwards;
+  animation-delay: 3.9s;
+}
+
+.cr-img {
+  height: 85px;
+  border-radius: 15px;
+}
+
+.cr-texto-wrapper {
+  display: flex;
+  flex-direction: column;
+  margin-left: 10px;
+}
+
+.cr-texto {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 18px;
+  color: #ff4ecb;
+  font-weight: bold;
+  padding-top: 2px;
+  margin-bottom: 4px;
+}
+
+.cr-info {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: 'Segoe UI', sans-serif;
+  font-size: 15px;
+  color: #ffffff;
+  opacity: 0.8;
+  margin-bottom: 4px;
+}
+
+.cr-icono {
+  height: 20px;
+  width: auto;
+  vertical-align: middle;
+}
+
+.cr-precio-precio-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin: 0;
+}
+
+.cr-precio-banderita {
+  background-color: #e50914;
+  color: white;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 13px;
+  font-weight: bold;
+  padding: 4px 10px;
+  border-radius: 4px;
+  width: fit-content;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+  transform: rotate(-2deg);
+  animation: fadeInUp 0.8s ease forwards;
+  opacity: 0;
+  animation-delay: 5.0s;
+  animation-fill-mode: forwards;
+  letter-spacing: 0.5px;
+}
+
+.cr-precio-tachado {
+  color: orange;
+  font-size: 13px;
+  text-decoration: line-through;
+  font-family: 'Segoe UI', sans-serif;
+  opacity: 0;
+  animation: fadeInUp 0.8s ease forwards;
+  animation-delay: 5.2s;
+  animation-fill-mode: forwards;
+  padding: 2px 0;
+}
+
+.cr-link {
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* VIX+ */
+
+.vix-wrapper {
+  position: absolute;
+  top: 1230px; /* Debajo de Netflix */
+  left: 5%;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  z-index: 2;
+  user-select: none;
+  opacity: 0;
+  animation: slideInLeft 1s ease forwards;
+  animation-delay: 4.2s;
+}
+
+.vix-img {
+  height: 85px;
+  border-radius: 15px;
+}
+
+.vix-texto-wrapper {
+  display: flex;
+  flex-direction: column;
+  margin-left: 10px;
+}
+
+.vix-texto {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 18px;
+  color: #ff4ecb;
+  font-weight: bold;
+  padding-top: 2px;
+  margin-bottom: 4px;
+}
+
+.vix-info {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: 'Segoe UI', sans-serif;
+  font-size: 15px;
+  color: #ffffff;
+  opacity: 0.8;
+  margin-bottom: 4px;
+}
+
+.vix-icono {
+  height: 20px;
+  width: auto;
+  vertical-align: middle;
+}
+
+.vix-precio-precio-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin: 0;
+}
+
+.vix-precio-banderita {
+  background-color: #e50914;
+  color: white;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 13px;
+  font-weight: bold;
+  padding: 4px 10px;
+  border-radius: 4px;
+  width: fit-content;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+  transform: rotate(-2deg);
+  animation: fadeInUp 0.8s ease forwards;
+  opacity: 0;
+  animation-delay: 5.3s;
+  animation-fill-mode: forwards;
+  letter-spacing: 0.5px;
+}
+
+.vix-precio-tachado {
+  color: orange;
+  font-size: 13px;
+  text-decoration: line-through;
+  font-family: 'Segoe UI', sans-serif;
+  opacity: 0;
+  animation: fadeInUp 0.8s ease forwards;
+  animation-delay: 5.5s;
+  animation-fill-mode: forwards;
+  padding: 2px 0;
+}
+
+.vix-link {
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Canva */
+
+.canva-wrapper {
+  position: absolute;
+  top: 1340px; /* Debajo de Netflix */
+  left: 5%;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  z-index: 2;
+  user-select: none;
+  opacity: 0;
+  animation: slideInLeft 1s ease forwards;
+  animation-delay: 4.5s;
+}
+
+.canva-img {
+  height: 85px;
+  border-radius: 15px;
+}
+
+.canva-texto-wrapper {
+  display: flex;
+  flex-direction: column;
+  margin-left: 10px;
+}
+
+.canva-texto {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 18px;
+  color: #ff4ecb;
+  font-weight: bold;
+  padding-top: 2px;
+  margin-bottom: 4px;
+}
+
+.canva-info {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: 'Segoe UI', sans-serif;
+  font-size: 15px;
+  color: #ffffff;
+  opacity: 0.8;
+  margin-bottom: 4px;
+}
+
+.canva-icono {
+  height: 20px;
+  width: auto;
+  vertical-align: middle;
+}
+
+.canva-precio-precio-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin: 0;
+}
+
+.canva-precio-banderita {
+  background-color: #e50914;
+  color: white;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 13px;
+  font-weight: bold;
+  padding: 4px 10px;
+  border-radius: 4px;
+  width: fit-content;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+  transform: rotate(-2deg);
+  animation: fadeInUp 0.8s ease forwards;
+  opacity: 0;
+  animation-delay: 5.6s;
+  animation-fill-mode: forwards;
+  letter-spacing: 0.5px;
+}
+
+.canva-precio-tachado {
+  color: orange;
+  font-size: 13px;
+  text-decoration: line-through;
+  font-family: 'Segoe UI', sans-serif;
+  opacity: 0;
+  animation: fadeInUp 0.8s ease forwards;
+  animation-delay: 5.8s;
+  animation-fill-mode: forwards;
+  padding: 2px 0;
+}
+
+.canva-link {
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* WINDOWS 11 PRO */
+
+.wi11p-wrapper {
+  position: absolute;
+  top: 1450px; /* Debajo de Netflix */
+  left: 5%;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  z-index: 2;
+  user-select: none;
+  opacity: 0;
+  animation: slideInLeft 1s ease forwards;
+  animation-delay: 4.8s;
+}
+
+.wi11p-img {
+  height: 85px;
+  border-radius: 15px;
+}
+
+.wi11p-texto-wrapper {
+  display: flex;
+  flex-direction: column;
+  margin-left: 10px;
+}
+
+.wi11p-texto {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 18px;
+  color: #ff4ecb;
+  font-weight: bold;
+  padding-top: 2px;
+  margin-bottom: 4px;
+}
+
+.wi11p-info {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: 'Segoe UI', sans-serif;
+  font-size: 15px;
+  color: #ffffff;
+  opacity: 0.8;
+  margin-bottom: 4px;
+}
+
+.wi11p-icono {
+  height: 20px;
+  width: auto;
+  vertical-align: middle;
+}
+
+.wi11p-precio-precio-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin: 0;
+}
+
+.wi11p-precio-banderita {
+  background-color: #e50914;
+  color: white;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 13px;
+  font-weight: bold;
+  padding: 4px 10px;
+  border-radius: 4px;
+  width: fit-content;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+  transform: rotate(-2deg);
+  animation: fadeInUp 0.8s ease forwards;
+  opacity: 0;
+  animation-delay: 5.9s;
+  animation-fill-mode: forwards;
+  letter-spacing: 0.5px;
+}
+
+.wi11p-precio-tachado {
+  color: orange;
+  font-size: 13px;
+  text-decoration: line-through;
+  font-family: 'Segoe UI', sans-serif;
+  opacity: 0;
+  animation: fadeInUp 0.8s ease forwards;
+  animation-delay: 6.1s;
+  animation-fill-mode: forwards;
+  padding: 2px 0;
+}
+
+.wi11p-link {
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* WINDOWS 11 HOME */
+
+.wi11h-wrapper {
+  position: absolute;
+  top: 1560px; /* Debajo de Netflix */
+  left: 5%;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  z-index: 2;
+  user-select: none;
+  opacity: 0;
+  animation: slideInLeft 1s ease forwards;
+  animation-delay: 5.1s;
+}
+
+.wi11h-img {
+  height: 85px;
+  border-radius: 15px;
+}
+
+.wi11h-texto-wrapper {
+  display: flex;
+  flex-direction: column;
+  margin-left: 10px;
+}
+
+.wi11h-texto {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 18px;
+  color: #ff4ecb;
+  font-weight: bold;
+  padding-top: 2px;
+  margin-bottom: 4px;
+}
+
+.wi11h-info {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: 'Segoe UI', sans-serif;
+  font-size: 15px;
+  color: #ffffff;
+  opacity: 0.8;
+  margin-bottom: 4px;
+}
+
+.wi11h-icono {
+  height: 20px;
+  width: auto;
+  vertical-align: middle;
+}
+
+.wi11h-precio-precio-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin: 0;
+}
+
+.wi11h-precio-banderita {
+  background-color: #e50914;
+  color: white;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 13px;
+  font-weight: bold;
+  padding: 4px 10px;
+  border-radius: 4px;
+  width: fit-content;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+  transform: rotate(-2deg);
+  animation: fadeInUp 0.8s ease forwards;
+  opacity: 0;
+  animation-delay: 6.2s;
+  animation-fill-mode: forwards;
+  letter-spacing: 0.5px;
+}
+
+.wi11h-precio-tachado {
+  color: orange;
+  font-size: 13px;
+  text-decoration: line-through;
+  font-family: 'Segoe UI', sans-serif;
+  opacity: 0;
+  animation: fadeInUp 0.8s ease forwards;
+  animation-delay: 6.4s;
+  animation-fill-mode: forwards;
+  padding: 2px 0;
+}
+
+.wi11h-link {
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* WINDOWS 10 PRO */
+
+.wi10p-wrapper {
+  position: absolute;
+  top: 1670px; /* Debajo de Netflix */
+  left: 5%;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  z-index: 2;
+  user-select: none;
+  opacity: 0;
+  animation: slideInLeft 1s ease forwards;
+  animation-delay: 5.4s;
+}
+
+.wi10p-img {
+  height: 85px;
+  border-radius: 15px;
+}
+
+.wi10p-texto-wrapper {
+  display: flex;
+  flex-direction: column;
+  margin-left: 10px;
+}
+
+.wi10p-texto {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 18px;
+  color: #ff4ecb;
+  font-weight: bold;
+  padding-top: 2px;
+  margin-bottom: 4px;
+}
+
+.wi10p-info {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: 'Segoe UI', sans-serif;
+  font-size: 15px;
+  color: #ffffff;
+  opacity: 0.8;
+  margin-bottom: 4px;
+}
+
+.wi10p-icono {
+  height: 20px;
+  width: auto;
+  vertical-align: middle;
+}
+
+.wi10p-precio-precio-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin: 0;
+}
+
+.wi10p-precio-banderita {
+  background-color: #e50914;
+  color: white;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 13px;
+  font-weight: bold;
+  padding: 4px 10px;
+  border-radius: 4px;
+  width: fit-content;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+  transform: rotate(-2deg);
+  animation: fadeInUp 0.8s ease forwards;
+  opacity: 0;
+  animation-delay: 6.5s;
+  animation-fill-mode: forwards;
+  letter-spacing: 0.5px;
+}
+
+.wi10p-precio-tachado {
+  color: orange;
+  font-size: 13px;
+  text-decoration: line-through;
+  font-family: 'Segoe UI', sans-serif;
+  opacity: 0;
+  animation: fadeInUp 0.8s ease forwards;
+  animation-delay: 6.7s;
+  animation-fill-mode: forwards;
+  padding: 2px 0;
+}
+
+.wi10p-link {
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* WINDOWS 10 PRO */
+
+.wi10h-wrapper {
+  position: absolute;
+  top: 1780px; /* Debajo de Netflix */
+  left: 5%;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  z-index: 2;
+  user-select: none;
+  opacity: 0;
+  animation: slideInLeft 1s ease forwards;
+  animation-delay: 5.7s;
+}
+
+.wi10h-img {
+  height: 85px;
+  border-radius: 15px;
+}
+
+.wi10h-texto-wrapper {
+  display: flex;
+  flex-direction: column;
+  margin-left: 10px;
+}
+
+.wi10h-texto {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 18px;
+  color: #ff4ecb;
+  font-weight: bold;
+  padding-top: 2px;
+  margin-bottom: 4px;
+}
+
+.wi10h-info {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: 'Segoe UI', sans-serif;
+  font-size: 15px;
+  color: #ffffff;
+  opacity: 0.8;
+  margin-bottom: 4px;
+}
+
+.wi10h-icono {
+  height: 20px;
+  width: auto;
+  vertical-align: middle;
+}
+
+.wi10h-precio-precio-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin: 0;
+}
+
+.wi10h-precio-banderita {
+  background-color: #e50914;
+  color: white;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 13px;
+  font-weight: bold;
+  padding: 4px 10px;
+  border-radius: 4px;
+  width: fit-content;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+  transform: rotate(-2deg);
+  animation: fadeInUp 0.8s ease forwards;
+  opacity: 0;
+  animation-delay: 6.5s;
+  animation-fill-mode: forwards;
+  letter-spacing: 0.5px;
+}
+
+.wi10h-precio-tachado {
+  color: orange;
+  font-size: 13px;
+  text-decoration: line-through;
+  font-family: 'Segoe UI', sans-serif;
+  opacity: 0;
+  animation: fadeInUp 0.8s ease forwards;
+  animation-delay: 7.0s;
+  animation-fill-mode: forwards;
+  padding: 2px 0;
+}
+
+.wi10h-link {
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* OFFICE 356 */
+
+.of-wrapper {
+  position: absolute;
+  top: 1890px; /* Debajo de Netflix */
+  left: 5%;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  z-index: 2;
+  user-select: none;
+  opacity: 0;
+  animation: slideInLeft 1s ease forwards;
+  animation-delay: 6.0s;
+}
+
+.of-img {
+  height: 85px;
+  border-radius: 15px;
+}
+
+.of-texto-wrapper {
+  display: flex;
+  flex-direction: column;
+  margin-left: 10px;
+}
+
+.of-texto {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 18px;
+  color: #ff4ecb;
+  font-weight: bold;
+  padding-top: 2px;
+  margin-bottom: 4px;
+}
+
+.of-info {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: 'Segoe UI', sans-serif;
+  font-size: 15px;
+  color: #ffffff;
+  opacity: 0.8;
+  margin-bottom: 4px;
+}
+
+.of-icono {
+  height: 20px;
+  width: auto;
+  vertical-align: middle;
+}
+
+.of-precio-precio-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin: 0;
+}
+
+.of-precio-banderita {
+  background-color: #e50914;
+  color: white;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 13px;
+  font-weight: bold;
+  padding: 4px 10px;
+  border-radius: 4px;
+  width: fit-content;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+  transform: rotate(-2deg);
+  animation: fadeInUp 0.8s ease forwards;
+  opacity: 0;
+  animation-delay: 6.8s;
+  animation-fill-mode: forwards;
+  letter-spacing: 0.5px;
+}
+
+.of-precio-tachado {
+  color: orange;
+  font-size: 13px;
+  text-decoration: line-through;
+  font-family: 'Segoe UI', sans-serif;
+  opacity: 0;
+  animation: fadeInUp 0.8s ease forwards;
+  animation-delay: 7.3s;
+  animation-fill-mode: forwards;
+  padding: 2px 0;
+}
+
+.of-link {
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
