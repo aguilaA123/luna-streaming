@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Netflix - Detalles</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-image: url('img/fondo.jpg');
+      background-size: cover;
+      background-position: center;
+      font-family: 'Segoe UI', sans-serif;
+      height: 100vh;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.7);
+      z-index: 0;
+    }
+
+    .formulario-contenedor {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: rgba(28, 28, 28, 0.95);
+      color: white;
+      padding: 30px 25px;
+      border-radius: 10px;
+      width: 75%;
+      max-width: 350px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+      z-index: 1;
+      text-align: center;
+    }
+
+    .cerrar-x {
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      color: white;
+      font-size: 22px;
+      font-weight: bold;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    .cerrar-x:hover {
+      color: #ff4ecb;
+    }
+
+    .formulario-contenedor img {
+      height: 100px;
+      margin-bottom: 15px;
+      border-radius: 15px;
+    }
+
+    .descripcion {
+      font-size: 14px;
+      margin-bottom: 20px;
+      line-height: 1.5;
+      text-align: left;
+    }
+
+    button {
+      position: relative;
+      overflow: hidden;
+      outline: none;
+      cursor: pointer;
+      border-radius: 5px;
+      border: none;
+      background-color: hsl(255deg 50% 40%);
+      font-family: "Inter", sans-serif;
+      width: 100%;
+      padding: 0;
+      margin: 0 auto;
+      margin-top: 5px;
+      transition: box-shadow 0.3s ease;
+    }
+
+    .default-btn {
+      background-image: linear-gradient(
+        90.1deg,
+        rgba(84, 212, 228, 1) 0.2%,
+        rgba(68, 36, 164, 1) 99.9%
+      );
+    }
+
+    .default-btn,
+    .hover-btn {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      padding: 1em 3em;
+      font-size: 14px;
+      font-weight: 5400;
+      text-transform: uppercase;
+      justify-content: center;
+    }
+
+    .hover-btn {
+      position: absolute;
+      inset: 0;
+      font-size: 16px;
+      text-align: center;
+      background: linear-gradient(63deg, #1a237e 0%, #4527a0 100%);
+      transform: translateY(100%);
+      transition: transform 0.3s ease;
+    }
+
+    .default-btn span,
+    .hover-btn span {
+      color: white;
+    }
+
+    button:hover .default-btn {
+      transform: translateY(-100%);
+    }
+
+    button:hover .hover-btn {
+      transform: translateY(0%);
+    }
+
+    /* BRILLO RGB EXPANDIDO */
+    .efecto-brillo-azul {
+      animation: rgbAzulExpandido 1.5s ease forwards;
+    }
+
+    @keyframes rgbAzulExpandido {
+      0% {
+        box-shadow: 0 0 0 transparent;
+      }
+      25% {
+        box-shadow: 0 0 12px #00ffff;
+      }
+      50% {
+        box-shadow: 0 0 18px #00ccff;
+      }
+      75% {
+        box-shadow: 0 0 22px #3399ff;
+      }
+      100% {
+        box-shadow: 0 0 28px #00eaff;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="overlay"></div>
+
+  <div class="formulario-contenedor">
+    <a class="cerrar-x" href="..">X</a>
+
+    <img src="img/Netflix.png" alt="Netflix Logo" />
+
+    <div class="descripcion">
+      ⏰ Alquiler 30 días<br>
+      🧙🏼‍♂️  Plan Premium Full HD 4K<br>
+      ➡️ 1 perfil con pin privado<br>
+      🎙️ Uso de 1 dispositivo en simultáneo<br>
+      👨🏻‍💻 Soporte técnico<br>
+        <br>
+      Netflix es un servicio de streaming con gran variedad de series y peliculas en alta definición con conexión a internet.<br>
+        <br>
+        ✅ COMPATIBLE:<br>
+        🔌 Andorid || iPhone || Laptop/PC || Smart TV
+    </div>
+
+    <!-- BOTÓN -->
+    <button id="btn-comprar">
+      <div class="default-btn">
+        <svg viewBox="0 0 24 24" width="20" height="20" stroke="#ffffff" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="9" cy="21" r="1"></circle>
+          <circle cx="20" cy="21" r="1"></circle>
+          <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+        </svg>
+        <span>COMPRAR</span>
+      </div>
+      <div class="hover-btn">
+        <span>7,00 €</span>
+      </div>
+    </button>
+  </div>
+
+  <!-- SONIDO DE COMPRA -->
+  <audio id="sonido-compra" src="img/compra.mp3" preload="auto"></audio>
+
+  <script>
+    const boton = document.getElementById("btn-comprar");
+    const sonido = document.getElementById("sonido-compra");
+
+    boton.addEventListener("click", () => {
+      boton.classList.add("efecto-brillo-azul");
+      sonido.currentTime = 0;
+      sonido.play();
+
+      setTimeout(() => {
+        window.location.href = "https://wa.me/34660042417?text=%F0%9F%91%8B%20*%C2%A1Hola!*%20Vengo%20del%20cat%C3%A1logo%3A%0A%F0%9F%94%97%20*https%3A%2F%2Fluna-streaming.vercel.app*%0A%0A%F0%9F%9B%8D%EF%B8%8F%20*Producto%20seleccionado%3A*%0A%F0%9F%8E%AC%20*Netflix%201%20mes*%20%E2%80%94%20_7.50%20%E2%82%AC_%0A%0A%F0%9F%93%A6%20*Resumen%20del%20pedido%3A*%0A%E2%80%A2%20Producto%3A%20_7.50%20%E2%82%AC_%0A%E2%80%A2%20Descuento%3A%20_0.50%20%E2%82%AC_%0A%E2%80%A2%20Entrega%3A%20_*Gratis*_%0A%E2%80%A2%20*Total%3A%207.00%20%E2%82%AC*%0A%0A%F0%9F%92%B3%20*Estado%20de%20pago%3A*%20%E2%9D%8C%20No%20pagado%0A%F0%9F%92%B0%20*Total%20a%20pagar%3A%207.00%20%E2%82%AC*%0A%0A%F0%9F%93%A9%20Env%C3%ADo%20este%20mensaje%20para%20confirmar%20mi%20pedido.%20%C2%A1Quedo%20a%20la%20espera%20de%20la%20atenci%C3%B3n!";
+      }, 2000);
+    });
+  </script>
+
+</body>
+</html>
